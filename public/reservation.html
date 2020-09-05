@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>italianConsegna</title>
+     <!-- Our linked CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="icon" href="/images//favicon.png">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+            <img class="logo-img" src="images/logo.png" atl="italianConsegna. logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="ristoranti.html">Ristoranti</a></li>
+                    <li><a href="track.html">Track My Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <section class="restaurant-first">
+
+        <div class="wrapper" style="background-image: url('../images/style4.jpg');">
+            <div class="bottom-left"><h1>Osteria Mozza<br>
+                <h2><span>10 Bayfront Avenue, Singapore 018956</span></h2>
+            </h1></div>
+        </div>
+
+        <div class="header_menu_category">
+            <ul id="sidebar" class="md_header_list_category" style="width: 1000px">
+                    <li><a href="restaurant.html" class="">ANTIPASTI</a></li>
+                    <li><a href="restaurant.html" class="">PASTA</a></li>
+                    <li><a href="#" class="">SEONCDI</a></li>
+                    <li><a href="" class="">CONTORINI</a></li>
+                    <li><a href="reservation.html" class="">RESERVATIONS</a></li>
+                    <li><a href="reviews.html" class="">REVIEWS<span class="badge">1,128</span></a></li>
+           </ul>
+        </div>
+        
+        <div class="opening_hours">
+            <p>OPEN TILL: Daily till 11pm</p>
+        </div><br><br>
+
+        <div class="reservationpic">
+            <img src="images/vation2.jpg">
+        </div>
+
+        <div class="container-reservation">
+
+            <ul class="weekdaylunch-reservation">
+                <li><b>LUNCH</b></li>
+                <li>MON - FRI: 11:00am - 3:30pm</li>
+                <li>SAT - SUN: 12:00pm - 2:30pm</li>
+            </ul>
+
+            <ul class="dinner-reservation">
+                <li><b>DINNER</b></li>
+                <li>MON - SAT: 5pm - 11pm</li>
+                <li>SUN: 5pm - 10pm</li>
+            </ul>
+
+            <p>Last order is 15mins before closing.</p>
+            <p><b>DRESS CODE:</b><br>Business casual</p>
+            <p><strong>PRICES MAY BE SUBJECT TO CHANGES.</strong></p>
+            <p><strong>All prices stated are subject to 10% service charge and prevailing GST.</strong></p>
+            <br><hr><br>
+            <h4 class="dinerdetails"><b>Diner</b> details</h4><!-- Other Section Title -->
+
+            <div class="reservationselect">
+                
+                <div class="field-container">
+                    <label for="adult-guest">Adult :</label>
+                    <select name="adult-guest" id="adult-guest"><!-- Adult Guest Select Box -->
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+
+                <div class="field-container">
+                        <label for="child-guest">Children :</label>
+                        <select name="child-guest" id="child-guest"><!-- Adult Guest Select Box -->
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div><br>
+
+                <div class="field-container">
+                        <label for="child-guest">Date :</label>
+                        <select name="child-guest" id="child-guest"><!-- Adult Guest Select Box -->
+                            <option value="1"></option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+
+                <div class="field-container">
+                        <label for="timing">Time :</label>
+                        <select name="time" id="time"><!-- Adult Guest Select Box -->
+                            <option value="1">11am</option>
+                            <option value="2">11.30am</option>
+                            <option value="3">12pm</option>
+                            <option value="4">12.30pm</option>
+                            <option value="5">1pm</option>
+                            <option value="6">1.30pm</option>
+                            <option value="6">2pm</option>
+                            <option value="6">2.30pm</option>
+                            <option value="6">3pm</option>
+                            <option value="6">3.30pm</option>
+                            <option value="6">4pm</option>
+                            <option value="6">4.30pm</option>
+                            <option value="6">5pm</option>
+                            <option value="6">5.30pm</option>
+                            <option value="6">6pm</option>
+                            <option value="6">6.30pm</option>
+                            <option value="6">7pm</option>
+                            <option value="6">7.30pm</option>
+                            <option value="6">8pm</option>
+                            <option value="6">8.30pm</option>
+                            <option value="6">8pm</option>
+                            <option value="6">9.30pm</option>                           
+                            <option value="6">9pm</option>
+                            <option value="6">10pm</option>
+                            <option value="6">10.30pm</option>
+
+
+                        </select>
+                    </div>
+                    
+                </div>
+
+            <div class="reservation-submit">
+                <input type="submit" class="btn btn-default" value="Check Availability">
+                </div>
+        
+        </div>

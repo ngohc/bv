@@ -1,0 +1,107 @@
+<!Doctype HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>italianConsegna</title>
+     <!-- Our linked CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="icon" href="/images//favicon.png">
+    <title>Log in success!</title>
+    <script>
+        function welcome() {
+            // The username from login.html has been added as query string so we need to
+            // get the value of username from the query string. We can do this by using a 
+            // built-in JavaScript function called URLSearchParams which makes use of 
+            // the built-in 'window.location.search' property.
+            var urlParams = new URLSearchParams(window.location.search);
+
+            // We then use the built-in getAll function and pass in the key of the query string
+            // which is 'username' to get its value.
+            var username = urlParams.getAll('username');
+
+            // Once we get the value of username from the query string,
+            // we will set the Welcome message to the div with id='welcome'.
+            document.getElementById('welcome').textContent = username;
+        }
+    </script>
+</head>
+
+<!-- When this page loads, execute the JavaScript welcome() function that we created above. -->
+<body>
+
+    <img id="user" src="images/usertwo.png" width="40" height="35" margin-right="100px">
+
+    <section>
+        <div class="container">
+
+            <img class="logo-img" src="images/logo.png" atl="italianConsegna. logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="ristoranti.html">Ristoranti</a></li>
+                    <li><a href="track.html">Track My Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    
+                </ul>
+            </nav>
+
+            <section class="header-login">
+                    <ul>
+                        <div class="container-login">
+                            <li>
+                                <body onload="welcome()">
+                                    <div id="welcome" style="float:right; margin-left: 10px"></div>
+                            </li>
+                            <li><img src="images/line2.png" class="line-login"></li>
+                            <li><a href="cart.html"><img src="images/shopping-cart.png" class="myaccount-shoppingcart"></a></li>
+                        </div>
+                    </ul>
+            </section>
+        </div>
+    </section>
+
+    <section class="profile">
+            <img src="images/profile.png"><br><br>
+            <a href="profile.html"><p><span>Ngoh Chantel</span></p></a>
+            <a href="track.html"><p>Orders</p></a>
+            <p>Favorites</p>
+            <a href="profile-reservation.html"><p>Reservations</p></a>         
+    </section>
+
+</body>
+
+<br><br><br><br><br>
+
+<footer class="footer">
+        <div class="row">
+
+            <div class="column" style="background-color:#aaa">
+                <ul class="unstyled-list1">
+                    <li>BE AN ITALIANO</li>
+                    <li>BE A PARTNER</li>
+                    <li>TERMS & PRIVACY</li>
+                </ul>
+            </div>
+
+            <div class="column" style="background-color:#aaa">
+                <ul class="unstyled-list1">
+                    <li><img src="images/logo.png" alt="logo for col-2" class="footer-logo-img"></li>   
+                    <li>Subscribe with your email address to receive italianConsegna's news and updates.</li>
+                    <li><input type="text" name="subcription" class="footer-subscribe"></li>
+                    <li><button type="submit" class="footer-submit">SUBSCRIBE</button>
+                </ul>
+            </div>
+
+            <div class="column" style="background-color:#aaa">
+                <ul class="unstyled-list1">
+                    <li>CONTACT</li>
+                    <li>FAQ</li>
+                </ul>
+            </div>
+        </div>
+</footer>
+</html>

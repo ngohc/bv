@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>italianConsegna</title>
+     <!-- Our linked CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="icon" href="/images//favicon.png">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+            <a href="index.html"><img class="logo-img" src="images/logo.png" atl="italianConsegna. logo" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="ristoranti.html">Ristoranti</a></li>
+                    <li><a href="track.html">Track My Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <div class="profile-logos">
+            <ul>
+                <li><a href="profile.html"><img src="images/user.png"></a>
+                <br>
+                <p>Profile</p>
+                 </li>
+                 
+                <li><a href="address.html"><img src="images/map.png"></a>
+                    <br>
+                    <p>Address</p></li>
+                <li><a href="payment.html"><img src="images/dollar.png"></a>
+                    <br>
+                    <p>Payment</p></li>
+            </ul>
+    </div>
+
+    <div class="address-body">
+        <h2 id="address-title">Address</h2><br>
+        <img id="coverphoto" src="images/rest5.jpg">
+        <div class="list_address">
+        
+            <table>
+                <tbody>
+                    <div class="address-container">
+                        <tr>
+                            <td>
+                                <label class="control control--radio add_option">
+                                    <input id="" type="radio" name="address_default" checked="true" value="8680">
+                                    <div class="control__indicator radio"></div>
+                                </label>
+                            </td>
+
+                            <td style="text-align: left;">
+                                <div class="address-one">
+                                    <p class="address_name" onclick="showEditAddress(0)"><span>Home</span></p>
+                                    <p class="address_content" onclick="showEditAddress(0)">Woodlands Drive 16 #01-101 730586</p> 
+                                </div>
+                            </td>
+
+                            <!-- <td><img alt="edit" onclick="showEditAddress(0)"
+                                onmouseover="this.src='http://www.porterfetch.com/assets/images/client/icon_edit_on.png';"
+                                onmouseout="this.src='http://www.porterfetch.com/assets/images/client/icon_edit_off.png';"
+                                src="http://www.porterfetch.com/assets/images/client/icon_edit_off.png">
+                            </td> -->
+
+                            <td>
+                                <img class="addresspic" alt="remove" onclick="removeAddress('8680');" 
+                                     onmouseover="this.src='images/multiply.png';" 
+                                     onmouseout="this.src='images/mulwhite.png';" src="images/mulwhite.png">
+                            </td>
+
+                        </tr>
+                    </div>
+                </tbody>
+            </table>
+                <br><br><br>
+                    <input type="button" class="address-button" onclick="showAddNewAddress();" value="ADD ADDRESS">
+                <div class="extra"></div>
+        </div>
+    </div>
+</body>
+</html>

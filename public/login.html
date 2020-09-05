@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+
+</head>
+
+<body>
+
+
+    <form id="loginForm">
+        <label>Username: </label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label>Password: </label>
+        <input type="password" id="password" name="password">
+        <input type="button" onclick="login()" value="Submit">
+    </form>
+    <div id="message"></div>
+
+
+    <script>
+        var response = "";
+
+        function login() {
+            // Create a new object to contain the data in the loginForm.
+            // We assign the new object to a variable called "credentials".
+            var credentials = new Object();
+
+            credentials.username = document.getElementById("username").value;
+            credentials.password = document.getElementById("password").value;
+
+            var request = new XMLHttpRequest();
+
+            request.open("POST", "/login", true);
+            request.setRequestHeader("Content-Type", "application/json");
+            request.onload = function() {
+                response = JSON.parse(request.responseText);
+                document.getElementById("loginForm").style.display = "none";
+
+                // Check the message from the server. If it is '1', then login is successful,
+                // in this case redirect to main.html page using the built-in 'window.location' 
+                // property and create a query string with username at the end of the URL.
+                // If message is not '1', print out to the div with id='message'.
+                if (response.message == "1")
+                    window.location = "myaccount.html?username=" + credentials.username;
+                else
+                    document.getElementById("message").textContent = response.message;
+            };
+
+            request.send(JSON.stringify(credentials));
+        }
+    </script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>italianConsegna</title>
+     <!-- Our linked CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="icon" href="/images//favicon.png">
+    <script src="jquery-3.3.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>        
+        $(document).ready(function(){
+
+            var headerHeight = $('header').outerHeight();
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top - headerHeight + 45
+                }, 700, function(){
+            
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+                } // End if
+        });
+        });
+    </script>
+
+    <style>
+        #track_button {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        border: solid 2px #474544;
+        background-color: #474544;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 10px;
+        font-family: 'Helvetica', Arial, sans-serif;
+        font-size: 0.8em;
+        font-weight: bold;
+        outline: none;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.1s;
+        }
+        
+        #track_button:hover {
+        background-color: #555;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <button onclick="topFunction()" id="track_button" title="Go to top">Top</button>
+
+    <script>
+            jQuery(document).ready(function($){
+                $(window).scroll(function(){
+                    if ($(this).scrollTop() > 400) {
+                        $('#track_button').fadeIn('slow');
+                    } else {
+                        $('#track_button').fadeOut('slow');
+                    }
+                });
+                $('#track_button').click(function(){
+                    $("html, body").animate({ scrollTop: 0 }, 500);
+                    return false;
+                });
+            });
+    </script>
+
+    <header>
+        <div class="container">
+
+            <img class="logo-img" src="images/logo.png" atl="italianConsegna. logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="ristoranti.html">Ristoranti</a></li>
+                    <li><a href="track.html">Track My Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <section class="location_set">
+        <br><br><br><br><br>
+        <li><img src="images/pin.png"></li>
+        <li><input id="autocomplete" type="text" name="location" placeholder="ENTER LOCATION"></li>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtNrLnf2_mJura1rSB_VZMceSYPhcbpgM&libraries=places&callback=initAutocomplete&components=country:sg" async defer></script>
+    </section>
+
+    <script>
+    var placeSearch, autocomplete, geocoder;
+
+        function initAutocomplete() {
+        geocoder = new google.maps.Geocoder();
+        autocomplete = new google.maps.places.Autocomplete(
+            (document.getElementById('autocomplete'))/*,
+            {types: ['(cities)']}*/);
+
+        autocomplete.addListener('place_changed', fillInAddress);
+        }
+
+        function codeAddress(address) {
+            geocoder.geocode( { 'address': address}, function(results, status) {
+            if (status == 'OK') {
+                alert(results[0].geometry.location);
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+            });
+        }
+
+        function fillInAddress() {
+        var place = autocomplete.getPlace();
+        }
+    </script>
+
+    <section class="rist-openclose">
+
+        <ul>
+            <div>
+                <li><button class="unstyled-buttonone"><a href="open.html">OPEN NOW</button></a></li>
+                <li><img src="images/line.png"></li>
+                <li><button class="unstyled-buttontwo"><a href="#closed">CLOSED</a></button></li>
+            </div>
+
+        </ul>
+
+    </section>
+
+    <div class="open-rest">
+            <h2 class="openclose-title">67 ristoranti open</h2><br>
+            
+            <div class="openclose-content-container">
+                    <section class="open-rist-promoitems">
+                            <ul>
+
+                                <li>    
+                                    <div class="open-container-promo">
+                                        <img src="images/mostpop1.png" alt="promoone">
+                                        <center><div class="open-mostpop-text-block"> 
+                                            <h4>Amato's</h4>
+                                        </div></center>
+                                    </div>
+                                </li>
+                    
+                                <li>
+                                    <div class="open-container-promo">
+                                        <img src="images/mostpop2.jpg" alt="promotwo">
+                                        <div class="open-mostpop-text-block"> 
+                                            <h4>Ask</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                    
+                                <li>
+                                    <div class="open-container-promo">
+                                        <img src="images/mostpop3.jpg" alt="promotwo">
+                                        <div class="open-mostpop-text-block"> 
+                                            <h4>Al Borgo @ Namly</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                    
+                                <li>
+                                    <div class="open-container-promo">
+                                        <a href="restaurant.html"><img src="images/mostpop4.jpg"alt="promotwo"></a>
+                                        <div class="open-mostpop-text-block"> 
+                                            <h4>Angelo's Civita Farnese</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li>    
+                                    <div class="open-container-promo">
+                                        <img src="images/mostpop1.png" alt="promoone">
+                                        <div class="open-mostpop-text-block"> 
+                                            <h4>Bella Italia</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                    
+                                <li>
+                                    <div class="open-container-promo">
+                                        <img src="images/mostpop2.jpg" alt="promotwo">
+                                        <div class="open-mostpop-text-block"> 
+                                            <h4>BiCE Ristorante</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                    
+                                <li>
+                                    <div class="open-container-promo">
+                                        <img src="images/mostpop3.jpg" alt="promotwo">
+                                        <div class="open-mostpop-text-block"> 
+                                            <h4>Brio Tuscan Grille</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                    
+                                <li>
+                                    <div class="open-container-promo">
+                                        <a href="restaurant.html"><img src="images/mostpop4.jpg"alt="promotwo"></a>
+                                        <div class="open-mostpop-text-block"> 
+                                            <h4>Bertucci's</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li>    
+                                    <div class="open-container-promo">
+                                        <img src="images/mostpop1.png" alt="promoone">
+                                        <div class="open-mostpop-text-block"> 
+                                            <h4>Caffé Vittoria</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                    
+                                <li>
+                                    <div class="open-container-promo">
+                                        <img src="images/mostpop2.jpg" alt="promotwo">
+                                        <div class="open-mostpop-text-block"> 
+                                            <h4>Capri Trattoria and Pizzeria</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                    
+                                <li>
+                                    <div class="open-container-promo">
+                                        <img src="images/mostpop3.jpg" alt="promotwo">
+                                        <div class="open-mostpop-text-block"> 
+                                            <h4>Cacio e Pepe</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                    
+                                <li>
+                                    <div class="open-container-promo">
+                                        <a href="restaurant.html"><img src="images/mostpop4.jpg"alt="promotwo"></a>
+                                        <div class="open-mostpop-text-block"> 
+                                            <h4>Carrabba's Italian Grill</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li>    
+                                    <div class="open-container-promo">
+                                        <img src="images/mostpop1.png" alt="promoone">
+                                        <center><div class="open-mostpop-text-block"> 
+                                            <h4>Amato's</h4>
+                                        </div></center>
+                                    </div>
+                                </li>
+
+                                <li>    
+                                    <div class="open-container-promo">
+                                        <img src="images/mostpop1.png" alt="promoone">
+                                        <center><div class="open-mostpop-text-block"> 
+                                            <h4>Amato's</h4>
+                                        </div></center>
+                                    </div>
+                                </li>
+
+                                <li>    
+                                    <div class="open-container-promo">
+                                        <img src="images/mostpop1.png" alt="promoone">
+                                        <center><div class="open-mostpop-text-block"> 
+                                            <h4>Amato's</h4>
+                                        </div></center>
+                                    </div>
+                                </li>
+
+                            </ul>
+                    </section>
+            </div>
+    </div>
+    
+    <br><hr>
+    
+    <div id="closed" class="open-rest">
+        <h2 class="openclose-title">32 ristoranti closed</h2><br>
+        
+        <div class="openclose-content-container">
+                <section class="open-rist-promoitems">
+                        <ul>
+
+                            <li>    
+                                <div class="open-container-promo">
+                                    <img src="images/mostpop1.png" alt="promoone">
+                                    <center><div class="open-mostpop-text-block"> 
+                                        <h4>Amato's</h4>
+                                    </div></center>
+                                </div>
+                            </li>
+                
+                            <li>
+                                <div class="open-container-promo">
+                                    <img src="images/mostpop2.jpg" alt="promotwo">
+                                    <div class="open-mostpop-text-block"> 
+                                        <h4>Ask</h4>
+                                    </div>
+                                </div>
+                            </li>
+                
+                            <li>
+                                <div class="open-container-promo">
+                                    <img src="images/mostpop3.jpg" alt="promotwo">
+                                    <div class="open-mostpop-text-block"> 
+                                        <h4>Al Borgo @ Namly</h4>
+                                    </div>
+                                </div>
+                            </li>
+                
+                            <li>
+                                <div class="open-container-promo">
+                                    <a href="restaurant.html"><img src="images/mostpop4.jpg"alt="promotwo"></a>
+                                    <div class="open-mostpop-text-block"> 
+                                        <h4>Angelo's Civita Farnese</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <li>    
+                                <div class="open-container-promo">
+                                    <img src="images/mostpop1.png" alt="promoone">
+                                    <div class="open-mostpop-text-block"> 
+                                        <h4>Bella Italia</h4>
+                                    </div>
+                                </div>
+                            </li>
+                
+                            <li>
+                                <div class="open-container-promo">
+                                    <img src="images/mostpop2.jpg" alt="promotwo">
+                                    <div class="open-mostpop-text-block"> 
+                                        <h4>Capri Trattoria and Pizzeria</h4>
+                                    </div>
+                                </div>
+                            </li>
+                
+                            <li>
+                                <div class="open-container-promo">
+                                    <img src="images/mostpop3.jpg" alt="promotwo">
+                                    <div class="open-mostpop-text-block"> 
+                                        <h4>Cacio e Pepe</h4>
+                                    </div>
+                                </div>
+                            </li>
+                
+                            <li>
+                                <div class="open-container-promo">
+                                    <a href="restaurant.html"><img src="images/mostpop4.jpg"alt="promotwo"></a>
+                                    <div class="open-mostpop-text-block"> 
+                                        <h4>Carrabba's Italian Grill</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            <li>    
+                                <div class="open-container-promo">
+                                    <img src="images/mostpop1.png" alt="promoone">
+                                    <center><div class="open-mostpop-text-block"> 
+                                        <h4>Amato's</h4>
+                                    </div></center>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                </section>
+        </div>
+</div>
+
+</body>
+</html>
+    
